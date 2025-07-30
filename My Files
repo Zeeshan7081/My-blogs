@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+toggleBtn.textContent = 'Switch to Urdu';
+        title.textContent = 'Welcome to My Blog';
+      }
+      isEnglish = !isEnglish;
+    }
+  </script>
+</body>
+</html>
+    }
+    nav {
+      background: #444;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    nav a, .toggle-btn {
+      color: #fff;
+      margin: 0.5rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    article {
+      margin-bottom: 2rem;
+    }
+    article h2 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .urdu {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      direction: rtl;
+      text-align: right;
+    }
+    .hidden {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+      nav a, .toggle-btn {
+        font-size: 0.9rem;
+      }
+}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1 id="title">Welcome to My Blog</h1>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <span class="toggle-btn" onclick="toggleLanguage()">Switch to Urdu</span>
+  </nav>
+  <div class="container">
+    <article class="en">
+      <h2>Blog Post Title 1</h2>
+      <p><em>Posted on July 30, 2025</em></p>
+      <p>This is a short paragraph of the blog post. You can continue writing your article here.</p>
+    </article>
+    <article class="en">
+      <h2>Blog Post Title 2</h2>
+      <p><em>Posted on July 29, 2025</em></p>
+      <p>This is another blog post. Keep your audience engaged with useful, clear content.</p>
+    </article>
+    <article class="urdu hidden">
+      <h2>پہلی بلاگ پوسٹ</h2>
+      <p><em>30 جولائی، 2025 کو شائع ہوئی</em></p>
+      <p>یہ بلاگ پوسٹ کا مختصر پیراگراف ہے۔ آپ یہاں اپنی تحریر جاری رکھ سکتے ہیں۔</p>
+    </article>
+    <article class="urdu hidden">
+      <h2>دوسری بلاگ پوسٹ</h2>
+      <p><em>29 جولائی، 2025 کو شائع ہوئی</em></p>
+      <p>یہ ایک اور بلاگ پوسٹ ہے۔ اپنے قارئین کو مفید اور واضح مواد سے مشغول رکھیں۔</p>
+    </article>
+  </div>
+  <footer>
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+  </footer>
+  <script>
+    let isEnglish = true;
+    function toggleLanguage() {
+      const enArticles = document.querySelectorAll('.en');
+      const urduArticles = document.querySelectorAll('.urdu');
+      const toggleBtn = document.querySelector('.toggle-btn');
+      const title = document.getElementById('title');
+
+      if (isEnglish) {
+        enArticles.forEach(el => el.classList.add('hidden'));
+        urduArticles.forEach(el => el.classList.remove('hidden'));
+        toggleBtn.textContent = 'Switch to English';
+        title.textContent = 'میری بلاگ میں خوش آمدید';
+      } else {
+        enArticles.forEach(el => el.classList.remove('hidden'));
